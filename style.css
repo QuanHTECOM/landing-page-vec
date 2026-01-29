@@ -1162,6 +1162,11 @@ body.menu-open {
     .content-footer .title-right-logo h2 {
         font-size: 14px !important;
     }
+
+    .content-footer .container {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 393px) {
