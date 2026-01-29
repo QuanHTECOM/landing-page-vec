@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ============================== Header ============================== -->
+    <header class="bg-white header-main">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-3">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <img src="./assets/img/logo.png" alt="VEC Logo" class="rounded-full logo-desktop">
+                        <img src="./assets/img/logo-mobile.png" alt="VEC Logo" class="rounded-full logo-mobile">
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8 navigation-bar">
+                    <a href="/" class="text-gray-700 font-medium transition-colors">
+                        Trang chủ
+                    </a>
+                    <a href="#tab-content" class="text-gray-700 font-medium transition-colors">
+                        Các dịch vụ thành viên
+                    </a>
+                    <a href="#doi-tac" class="text-gray-700 font-medium transition-colors">
+                        Đối tác
+                    </a>
+                    <a href="#lien-he" class="text-gray-700 font-medium transition-colors">
+                        Liên hệ
+                    </a>
+                </nav>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Cổng thông tin VEC Button -->
+                    <a href="/portal"
+                        class="text-white px-4 py-2 rounded-full flex items-center space-x-2 transition-colors ctt-vec-wrapper">
+                        <img src="./assets/img/icon-ctt-vec.png" alt="">
+                        <span class="text-sm font-medium">Cổng thông tin VEC</span>
+                    </a>
+
+                    <!-- Language Switcher -->
+                    <div class="relative group language-desktop">
+                        <button class="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
+                            <img src="https://flagcdn.com/w20/vn.png" alt="VI" class="w-5 h-4">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+
+                        <!-- <div
+                            class="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
+                            <a href="#" class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100">
+                                <img src="https://flagcdn.com/w20/vn.png" alt="VI" class="w-5 h-4">
+                                <span class="text-sm">Tiếng Việt</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100">
+                                <img src="https://flagcdn.com/w20/us.png" alt="EN" class="w-5 h-4">
+                                <span class="text-sm">English</span>
+                            </a>
+                        </div> -->
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-gray-700 hover:text-blue-600" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div class="mobile-menu-sidebar" id="mobileMenuSidebar">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo">
+                <img src="./assets/img/logo.png" alt="VEC Logo">
+            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="mobile-menu-nav">
+            <a href="/" class="mobile-menu-item">
+                <i class="fas fa-home"></i>
+                <span>Trang chủ</span>
+            </a>
+            <a href="#tab-content" class="mobile-menu-item">
+                <i class="fas fa-th-large"></i>
+                <span>Các dịch vụ thành viên</span>
+            </a>
+            <a href="#doi-tac" class="mobile-menu-item">
+                <i class="fas fa-handshake"></i>
+                <span>Đối tác</span>
+            </a>
+            <a href="#lien-he" class="mobile-menu-item">
+                <i class="fas fa-envelope"></i>
+                <span>Liên hệ</span>
+            </a>
+        </nav>
+
+        <div class="mobile-menu-footer">
+            <a href="/portal" class="mobile-menu-portal-btn">
+                <img src="./assets/img/icon-ctt-vec.png" alt="">
+                <span>Cổng thông tin VEC</span>
+            </a>
+
+            <div class="mobile-menu-language">
+                <button class="language-btn active">
+                    <img src="https://flagcdn.com/w20/vn.png" alt="VI">
+                    <span>Tiếng Việt</span>
+                </button>
+                <!-- <button class="language-btn">
+                    <img src="https://flagcdn.com/w20/us.png" alt="EN">
+                    <span>English</span>
+                </button> -->
+            </div>
+        </div>
+    </div>
+    <!-- ============================== End Header ============================== -->
+
+
+    <!-- ============================== HOME BANNER ============================== -->
+    <div class="hero-slider">
+        <div class="slide-item">
+            <!-- Content -->
+            <div class="content-wrapper">
+                <div class="z-10 flex items-center hero-slide-content content-slide-1">
+                    <div class="">
+                        <div class="grid grid-cols-1 gap-8 items-center">
+                            <!-- Right side - Text Content -->
+                            <div class="slide-content text-white text-center lg:text-left">
+                                <div class="content-text-banner">
+                                    <p class="mb-3 uppercase tracking-wider text-center small-text-title">
+                                        VEC - EXPRESSWAY
+                                    </p>
+                                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                                        Kiến tạo cao tốc<br>
+                                        Dẫn lối tương lai
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="z-10 flex items-center hero-slide-content content-slide-2">
+                    <div class="">
+                        <div class="grid grid-cols-1 gap-8 items-center">
+                            <!-- Right side - Text Content -->
+                            <div class="slide-content text-white text-center lg:text-left">
+                                <div class="content-text-banner">
+                                    <p class="mb-3 uppercase tracking-wider text-center small-text-title">
+                                        VEC - EXPRESSWAY
+                                    </p>
+                                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                                        Chuyên gia tư vấn<br>
+                                        cho những công trình<br>
+                                        chiến lược
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="z-10 flex items-center hero-slide-content content-slide-3">
+                    <div class="">
+                        <div class="grid grid-cols-1 gap-8 items-center">
+                            <!-- Right side - Text Content -->
+                            <div class="slide-content text-white text-center lg:text-left">
+                                <div class="content-text-banner">
+                                    <p class="mb-3 uppercase tracking-wider text-center small-text-title">
+                                        VEC - EXPRESSWAY
+                                    </p>
+                                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                                        Kết nối hôm nay<br>
+                                        Phát triển mai sau
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="z-10 flex items-center hero-slide-content content-slide-4">
+                    <div class="">
+                        <div class="grid grid-cols-1 gap-8 items-center">
+                            <!-- Right side - Text Content -->
+                            <div class="slide-content text-white text-center lg:text-left">
+                                <div class="content-text-banner">
+                                    <p class="mb-3 uppercase tracking-wider text-center small-text-title">
+                                        VEC - EXPRESSWAY
+                                    </p>
+                                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                                        Chuẩn mực cho mọi<br>
+                                        Công trình
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mũi tên Previous -->
+            <button class="slider-arrow slider-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <!-- Mũi tên Next -->
+            <button class="slider-arrow slider-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Features Bar -->
+            <div class="features-bar">
+                <div class="container mx-auto px-4 py-6">
+                    <div class="flex gap-4 text-white text-center feature-items-wrapper">
+                        <div class="feature-item slide-1">
+                            <p class="text-xs md:text-sm opacity-90">Kiến tạo cao tốc <br> Dẫn lối tương lai</p>
+                        </div>
+                        <div class="feature-item slide-2">
+                            <p class="text-xs md:text-sm opacity-90">Chuyên gia tư vấn cho những <br> công trình chiến
+                                lược
+                            </p>
+                        </div>
+                        <div class="feature-item slide-3">
+                            <p class="text-xs md:text-sm opacity-90">Kết nối hôm nay <br> Phát triển mai sau</p>
+                        </div>
+                        <div class="feature-item slide-4">
+                            <p class="text-xs md:text-sm opacity-90">Chuẩn mực cho mọi <br> Công trình</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================== END HOME BANNER ============================== -->
+
+    <!-- ============================== TAB CONTENT ============================== -->
+    <div class="container-tab-content" id="tab-content">
+        <div class="container mx-auto py-12">
+            <div class="tab-content-warraper relative">
+                <!-- Previous Arrow -->
+                <button class="tab-content-arrow tab-content-prev" id="tabcontentPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="tab-content-slider" id="tabcontentSlider">
+                    <div class="single-tab">
+                        <div class="single-tab-img">
+                            <img src="./assets/img/tab1.png" alt="">
+                        </div>
+                        <div class="single-tab-content">
+                            <p>
+                                Công ty Cổ phần Tư vấn đường cao tốc Việt Nam
+                            </p>
+                        </div>
+                    </div>
+                    <div class="single-tab">
+                        <div class="single-tab-img">
+                            <img src="./assets/img/tab2.png" alt="">
+                        </div>
+                        <div class="single-tab-content">
+                            <p>
+                                Công ty Cổ phần Dịch vụ đường cao tốc Việt Nam
+                            </p>
+                        </div>
+                    </div>
+                    <div class="single-tab">
+                        <div class="single-tab-img">
+                            <img src="./assets/img/tab3.png" alt="">
+                        </div>
+                        <div class="single-tab-content">
+                            <p>
+                                Công ty CP Vận hành & Bảo trì đường cao tốc Việt Nam
+                            </p>
+                        </div>
+                    </div>
+                    <div class="single-tab">
+                        <div class="single-tab-img">
+                            <img src="./assets/img/tab4.png" alt="">
+                        </div>
+                        <div class="single-tab-content">
+                            <p>
+                                Công ty Cổ phần Dịch vụ KỸ THUẬT đường cao tốc Việt Nam
+                            </p>
+                        </div>
+                    </div>
+                    <div class="single-tab">
+                        <div class="single-tab-img">
+                            <img src="./assets/img/tab2.png" alt="">
+                        </div>
+                        <div class="single-tab-content">
+                            <p>
+                                Trung tâm Nghiên cứu phát triển đường cao tốc Việt Nam
+                            </p>
+                        </div>
+                    </div>
+                    <div class="single-tab">
+                        <div class="single-tab-img">
+                            <img src="./assets/img/tab3.png" alt="">
+                        </div>
+                        <div class="single-tab-content">
+                            <p>
+                                Trung tâm Nghiên cứu phát triển đường cao tốc Việt Nam
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Arrow -->
+                <button class="tab-content-arrow tab-content-next" id="tabcontentNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ============================== END TAB CONTENT ============================== -->
+
+    <!-- ============================== GIỚI THIỆU CÔNG TY ==============================-->
+    <div class="container-intro-company">
+        <div class="container mx-auto py-12">
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+                <div class="intro-left-content w-full md:w-1/2">
+                    <div class="intro-left-content-wrapper">
+                        <p class="intro-subtitle">Giới thiệu</p>
+                        <h1 class="text-xl font-bold mb-4 intro-heading-title">
+                            Công ty Cổ phần Tư vấn đường cao tốc Việt Nam
+                        </h1>
+                        <p class="mb-4 intro-description">
+                            Công ty cổ phần Tư vấn đường cao tốc Việt Nam (VEC Consultant) - Top 10 công ty tư vấn ngành
+                            GTVT - là đơn vị thành viên của Tổng Công ty Đầu tư Phát triển Đường cao tốc Việt Nam (VEC),
+                            hoạt động chuyên nghiệp trong lĩnh vực tư vấn xây dựng công trình giao thông nói chung và
+                            công trình đường cao tốc nói riêng tại Việt Nam.
+                        </p>
+                        <a href="https://vecc.com.vn/" target="_blank">
+                            <button class="intro-view-more">
+                                <span>Tìm hiểu thêm</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="intro-right-content w-full md:w-1/2">
+                    <div class="intro-right-content-wrapper">
+                        <div class="content-images">
+                            <img src="./assets/img/intro-img-1.png" alt="" class="w-full h-80 object-cover img-intro">
+                            <img src="./assets/img/intro-img-2.png" alt="" class="w-full h-80 object-cover img-intro">
+                            <img src="./assets/img/intro-img-1.png" alt="" class="w-full h-80 object-cover img-intro">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================== END GIỚI THIỆU CÔNG TY ==============================-->
+
+    <!-- ============================== LĨNH VỰC KINH DOANH ============================== -->
+    <div class="container-business-fields">
+        <div class="container mx-auto">
+            <div class="business-fields-wrapper">
+                <div class="business-fields-subtitle">
+                    <p>LĨNH VỰC KINH DOANH</p>
+                </div>
+                <div class="business-fields-title">
+                    <h1>Chúng tôi cung cấp các lĩnh vực</h1>
+                </div>
+                <div class="business-fields-content">
+                    <div class="card-items-warapper relative">
+                        <!-- Previous Arrow -->
+                        <button class="card-items-arrow card-items-prev" id="carditemsPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="card-items-slider" id="carditemsSlider">
+                            <!-- <div class="card-item">
+                                <div class="card-item-img">
+                                    <img src="./assets/img/card-img-1.png" alt="">
+                                </div>
+                                <div class="card-item-icon-name">
+                                    <div class="icon-content">
+                                        <img src="./assets/img/icon-lvkd.png" alt="">
+                                    </div>
+                                    <div class="name-content">
+                                        <a href="">
+                                            Quản lý khai thác đường cao tốc
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-card-item">
+                                    <img src="./assets/img/bg-card-lvkd.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                <div class="card-item-img">
+                                    <img src="./assets/img/card-img-2.png" alt="">
+                                </div>
+                                <div class="card-item-icon-name">
+                                    <div class="icon-content">
+                                        <img src="./assets/img/icon-lvkd.png" alt="">
+                                    </div>
+                                    <div class="name-content">
+                                        <a href="">
+                                            Xây dựng công trình
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-card-item">
+                                    <img src="./assets/img/bg-card-lvkd.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                <div class="card-item-img">
+                                    <img src="./assets/img/card-img-3.png" alt="">
+                                </div>
+                                <div class="card-item-icon-name">
+                                    <div class="icon-content">
+                                        <img src="./assets/img/icon-lvkd.png" alt="">
+                                    </div>
+                                    <div class="name-content">
+                                        <a href="">
+                                            Dự án đầu tư
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-card-item">
+                                    <img src="./assets/img/bg-card-lvkd.png" alt="">
+                                </div>
+                            </div> -->
+
+                        </div>
+
+                        <!-- Next Arrow -->
+                        <button class="card-items-arrow card-items-next" id="carditemsNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================== END LĨNH VỰC KINH DOANH ============================== -->
+
+    <!-- ============================== ĐỔI TÁC ============================== -->
+    <div class="container-doi-tac" id="doi-tac">
+        <div class="container mx-auto px-4 py-12">
+            <h1 class="partner-title text-3xl md:text-4xl font-bold text-center mb-10">ĐỐI TÁC</h1>
+
+            <div class="partner-slider-container relative">
+                <!-- Previous Arrow -->
+                <button class="partner-arrow partner-prev" id="partnerPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <!-- Partner Slider -->
+                <div class="partner-slider" id="partnerSlider">
+                    <div class="partner-item">
+                        <img src="./assets/img/nippon.png" alt="Nippon Koei">
+                    </div>
+                    <div class="partner-item">
+                        <img src="./assets/img/yooshin.png" alt="Yooshin">
+                    </div>
+                    <div class="partner-item">
+                        <img src="./assets/img/wsp.png" alt="WSP">
+                    </div>
+                    <div class="partner-item">
+                        <img src="./assets/img/tedi.png" alt="TEDI">
+                    </div>
+                    <div class="partner-item">
+                        <img src="./assets/img/wsp.png" alt="WSP">
+                    </div>
+                    <div class="partner-item">
+                        <img src="./assets/img/cienco.png" alt="Cienco">
+                    </div>
+                    <div class="partner-item">
+                        <img src="./assets/img/smec.png" alt="SMEC">
+                    </div>
+                    <div class="partner-item">
+                        <img src="./assets/img/sun-group.png" alt="Sun Group">
+                    </div>
+                    <div class="partner-item">
+                        <img src="./assets/img/nippon.png" alt="Nippon Koei">
+                    </div>
+                </div>
+
+                <!-- Next Arrow -->
+                <button class="partner-arrow partner-next" id="partnerNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ============================== END ĐỔI TÁC ============================== -->
+
+
+    <!-- ============================== FOOTER ============================== -->
+    <div class="fragment_207" id="lien-he">
+        <div class="lg:!block">
+            <div class="bg-[#0090CF] content-footer">
+                <div
+                    class="container mx-auto grid !grid-cols-1 xl:!grid-cols-3 gap-2 md:gap-3 xl:gap-10 place-items-start py-4 px-6">
+                    <div
+                        class="flex flex-col md:flex-row xl:flex-row gap-6 items-center md:items-start text-center md:text-left column-1-footer">
+                        <div
+                            class="col-span-1 cursor-pointer w-full md:w-auto flex justify-center md:justify-start logo-footer">
+                            <img src="https://res.cloudinary.com/dc7irvi43/image/upload/v1767206731/vec-logo_mtycua.svg"
+                                alt="vec-logo" class="w-auto h-auto max-w-full" />
+                        </div>
+                        <div class="col-span-1 md:col-span-2 w-full">
+                            <div class="pb-3 border-b border-bottom-white-opacity title-right-logo">
+                                <h1 class="!text-white !text-base !font-bold text-center md:!text-left">
+                                    TỔNG CÔNG TY ĐẦU TƯ PHÁT TRIỂN <br />
+                                    ĐƯỜNG CAO TỐC VIỆT NAM
+                                </h1>
+                                <h2 class="!text-white !text-sm !font-bold text-center md:!text-left">Vietnam Expressway
+                                    Corporation (VEC)</h2>
+                            </div>
+
+                            <div
+                                class="flex flex-col sm:flex-row justify-center md:justify-start items-center sm:item-center self-center pt-3 gap-2 sm:gap-0">
+                                <div class="flex justify-center md:justify-start item-center pr-2">
+                                    <a href="https://www.facebook.com/VietnamExpresswayCorporation/?ref=embed_page#">
+                                        <img class="cursor-pointer"
+                                            src="https://res.cloudinary.com/dc7irvi43/image/upload/v1767206731/vec-fb_ircd5m.svg"
+                                            alt="vec-fb" />
+                                    </a>
+                                    <a
+                                        href="https://www.youtube.com/results?search_query=T%E1%BB%94NG+C%C3%94NG+TY+%C4%90%E1%BA%A6U+T%C6%AF+PH%C3%81T+TRI%E1%BB%82N+%C4%90%C6%AF%E1%BB%9CNG+CAO+T%E1%BB%90C+VI%E1%BB%86T+NAM+(VEC)">
+                                        <img class="cursor-pointer"
+                                            src="https://res.cloudinary.com/dc7irvi43/image/upload/v1767206731/vec-yt_ibulxk.svg"
+                                            alt="vec-yt" />
+                                    </a>
+                                </div>
+                                <div class="!text-white !text-sm !font-light self-center">Theo dõi chúng tôi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 w-full place-items-start gap-1">
+                        <div class="w-full">
+                            <span class="!text-white !font-bold !text-sm">ĐƠN VỊ THÀNH VIÊN</span>
+                        </div>
+                        <div class="w-full">
+                            <p class="!text-white !font-light !text-sm">Công ty CP Tư vấn Đường cao tốc Việt Nam</p>
+                            <p class="!text-white !font-light !text-sm">Công ty CP Dịch vụ đường cao tốc Việt Nam</p>
+                            <p class="!text-white !font-light !text-sm">Công ty CP Vận hành & Bảo trì đường cao tốc Việt
+                                Nam</p>
+                            <p class="!text-white !font-light !text-sm">Công ty CP Dịch vụ Kỹ thuật đường cao tốc Việt
+                                Nam</p>
+                            <p class="!text-white !font-light !text-sm">Trung tâm Nghiên cứu phát triển đường cao tốc
+                                Việt Nam</p>
+                            <p class="!text-white !font-light !text-sm">Trung tâm Nghiên cứu phát triển đường cao tốc
+                                Việt Nam</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 w-full place-items-start gap-1">
+                        <div class="w-full">
+                            <span class="!text-white !font-bold !text-sm">LIÊN HỆ VỚI CHÚNG TÔI</span>
+                        </div>
+                        <div class="w-full">
+                            <span class="!text-white !font-bold !text-sm">Địa chỉ:</span>
+                            <span class="!text-white !font-light !text-sm block sm:inline">Tầng 2, 3, 4, 5 tòa nhà
+                                Central
+                                Point, số 219 phố Trung Kính, phường Yên Hòa, thành phố Hà Nội </span>
+                        </div>
+                        <div class="w-full">
+                            <span class="!text-white !font-bold !text-sm">Tel:</span>
+                            <span class="!text-white !font-light !text-sm">84-024-3643 0266</span>
+                            <span class="!text-white !font-bold !text-sm ml-2">Fax:</span>
+                            <span class="!text-white !font-light !text-sm">84-024-3643 0270</span>
+                        </div>
+                        <div class="w-full">
+                            <span class="!text-white !font-bold !text-sm">Email:</span>
+                            <span class="!text-white !font-light !text-sm">duongcaotoc@tctvec.vn</span>
+                        </div>
+                        <div class="w-full">
+                            <span class="!text-white !font-bold !text-sm">Website:</span>
+                            <span class="!text-white !font-light !text-sm block sm:inline">duongcaotoc.com.vn /
+                                expressway.com.vn</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center w-full lg:hidden">
+                        <div class="cursor-pointer">
+                            <img src="https://res.cloudinary.com/dc7irvi43/image/upload/v1767206743/vec-fb-follow_kxwlem.svg"
+                                alt="vec-db-follow" class="w-auto h-auto max-w-full" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="block lg:hidden bg-[#0090CF]">
+            <div class="p-4 space-y-1">
+                <div class="flex justify-center">
+                    <img src="https://res.cloudinary.com/dc7irvi43/image/upload/v1768839043/logo-footer_a5cpkl.svg"
+                        alt="logo-mobile" class="w-auto h-auto max-w-full" />
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <div class="w-[78px]">&nbsp;</div>
+                    <div class="w-[196px] h-[1px] bg-white-opacity-20">
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <div class="w-[78px]">&nbsp;</div>
+                    <div class="w-[196px] flex items-center">
+                        <div>
+                            <a href="https://www.facebook.com/VietnamExpresswayCorporation/?ref=embed_page#"
+                                class="cursor-pointer">
+                                <svg width="36" height="39" viewBox="0 0 36 39" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="4.5" width="30" height="30" rx="15" fill="white" />
+                                    <path
+                                        d="M21.7188 20H19.375V27H16.25V20H13.6875V17.125H16.25V14.9062C16.25 12.4062 17.75 11 20.0312 11C21.125 11 22.2812 11.2188 22.2812 11.2188V13.6875H21C19.75 13.6875 19.375 14.4375 19.375 15.25V17.125H22.1562L21.7188 20Z"
+                                        fill="#0090CF" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.youtube.com/results?search_query=T%E1%BB%94NG+C%C3%94NG+TY+%C4%90%E1%BA%A6U+T%C6%AF+PH%C3%81T+TRI%E1%BB%82N+%C4%90%C6%AF%E1%BB%9CNG+CAO+T%E1%BB%90C+VI%E1%BB%86T+NAM+(VEC)"
+                                class="cursor-pointer">
+                                <svg width="44" height="39" viewBox="0 0 44 39" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="7" y="4.5" width="30" height="30" rx="15" fill="white" />
+                                    <path
+                                        d="M30.1562 14.9062C30.5312 16.2188 30.5312 19.0312 30.5312 19.0312C30.5312 19.0312 30.5312 21.8125 30.1562 23.1562C29.9688 23.9062 29.375 24.4688 28.6562 24.6562C27.3125 25 22 25 22 25C22 25 16.6562 25 15.3125 24.6562C14.5938 24.4688 14 23.9062 13.8125 23.1562C13.4375 21.8125 13.4375 19.0312 13.4375 19.0312C13.4375 19.0312 13.4375 16.2188 13.8125 14.9062C14 14.1562 14.5938 13.5625 15.3125 13.375C16.6562 13 22 13 22 13C22 13 27.3125 13 28.6562 13.375C29.375 13.5625 29.9688 14.1562 30.1562 14.9062ZM20.25 21.5625L24.6875 19.0312L20.25 16.5V21.5625Z"
+                                        fill="#0090CF" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="text-white text-xs font-normal">Theo dõi chúng tôi</div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="w-[327px]">
+                        <div class="">
+                            <span class="!text-white !font-bold !text-xs">Địa chỉ:</span>
+                            <span class="!text-white !font-light !text-xs block sm:inline">Tầng 2, 3, 4, 5 tòa nhà
+                                Central
+                                Point, số 219 phố Trung Kính, phường Yên Hòa, thành phố Hà Nội </span>
+                        </div>
+                        <div class="">
+                            <span class="!text-white !font-bold !text-xs">Tel:</span>
+                            <span class="!text-white !font-light !text-xs">84-024-3643 0266</span>
+                            <span class="!text-white !font-bold !text-xs ml-2">Fax:</span>
+                            <span class="!text-white !font-light !text-xs">84-024-3643 0270</span>
+                        </div>
+                        <div class="">
+                            <span class="!text-white !font-bold !text-xs">Email:</span>
+                            <span class="!text-white !font-light !text-xs">duongcaotoc@tctvec.vn</span>
+                        </div>
+                        <div class="">
+                            <span class="!text-white !font-bold !text-xs">Website:</span>
+                            <span class="!text-white !font-light !text-xs block sm:inline">duongcaotoc.com.vn /
+                                expressway.com.vn</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center w-full">
+                    <div class="cursor-pointer">
+                        <img src="https://res.cloudinary.com/dc7irvi43/image/upload/v1767206743/vec-fb-follow_kxwlem.svg"
+                            alt="vec-db-follow" class="w-auto h-auto max-w-full" />
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div id="btn-menu" style="z-index: 6"
+            class="z-index rounded-full p-[17px] fixed bottom-[72px] right-[18px] cursor-pointer border-2 border-white">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7H21" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M3 12H21" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M3 17H21" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+        </div>
+
+        <a href="tel:0123456789">
+            <div id="btn-call" style="z-index: 6"
+                class="round-full fixed right-[18px] cursor-pointer rounded-full bg-red">
+                <svg width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6.49033 1.76446C7.19868 1.91087 7.7628 2.38679 8.1133 3.01558L9.22981 5.01864C9.64107 5.75639 9.98716 6.37725 10.2132 6.91696C10.4529 7.48948 10.5953 8.05405 10.5302 8.67825C10.4651 9.30245 10.2093 9.8255 9.85661 10.3362C9.5241 10.8177 9.05735 11.3538 8.50273 11.9908L6.86147 13.8761C6.56736 14.2139 6.4203 14.3828 6.40686 14.5939C6.39342 14.8051 6.51395 14.9854 6.755 15.346C8.80948 18.4199 11.5784 21.1898 14.6548 23.246C15.0154 23.4871 15.1958 23.6076 15.4069 23.5942C15.618 23.5807 15.7869 23.4337 16.1248 23.1396L18.0101 21.4982C18.6471 20.9436 19.1832 20.4768 19.6647 20.1443C20.1754 19.7916 20.6985 19.5358 21.3227 19.4707C21.9469 19.4056 22.5115 19.548 23.084 19.7878C23.6236 20.0138 24.2445 20.3598 24.9821 20.771L26.9854 21.8876C27.6142 22.2381 28.0901 22.8023 28.2365 23.5106C28.3844 24.2264 28.1662 24.9458 27.6843 25.5371C25.9356 27.6825 23.134 29.0486 20.195 28.4557C18.3884 28.0913 16.606 27.4841 14.4501 26.2477C10.1184 23.7635 6.23453 19.8775 3.75319 15.5509C2.51679 13.395 1.90965 11.6125 1.54522 9.80593C0.95235 6.8669 2.31839 4.0653 4.46385 2.31667C5.05514 1.83474 5.77458 1.61653 6.49033 1.76446Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M16.9606 2.30999C17.152 1.6467 17.8449 1.26417 18.5082 1.45558C23.3423 2.85062 27.1498 6.65793 28.5451 11.492C28.7365 12.1553 28.354 12.8481 27.6907 13.0396C27.0274 13.231 26.3345 12.8485 26.1431 12.1852C24.9861 8.17652 21.8239 5.01443 17.815 3.85757C17.1517 3.66615 16.7692 2.97328 16.9606 2.30999ZM16.1935 8.2078C16.4634 7.57237 17.1972 7.27599 17.8327 7.54583C19.9098 8.42789 21.5728 10.0909 22.4549 12.168C22.7247 12.8034 22.4283 13.5373 21.7929 13.8071C21.1575 14.077 20.4236 13.7806 20.1538 13.1452C19.5248 11.6642 18.3365 10.4759 16.8555 9.84695C16.2201 9.57711 15.9237 8.84324 16.1935 8.2078Z"
+                        fill="white" />
+                </svg>
+            </div>
+        </a>
+
+        <div id="btn-scroll-toll" style="z-index: 6"
+            class="hidden-btn-scroll-toll round-full fixed bottom-[72px] right-[18px] cursor-pointer rounded-full bg-white">
+            <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M6.34981 0.222391L0.296907 5.29055C0.11943 5.43881 0.0213506 5.62219 0.00266883 5.84068C-0.016013 6.05917 0.0633846 6.25425 0.240862 6.42592C0.418339 6.57418 0.640185 6.65611 0.9064 6.67172C1.17262 6.68732 1.4038 6.62099 1.59996 6.47273L1.642 6.46103C1.66068 6.45323 1.67002 6.44152 1.67002 6.42592L6.11161 2.7038V16.2462C6.11161 16.4647 6.21203 16.65 6.41286 16.8022C6.61369 16.9544 6.84955 17.0187 7.12043 16.9953C7.36329 16.9953 7.57346 16.9192 7.75094 16.7671C7.92842 16.6149 8.01716 16.4413 8.01716 16.2462V2.7038L12.4728 6.42592C12.6409 6.56637 12.8534 6.63075 13.1103 6.61904C13.3672 6.60734 13.589 6.52736 13.7758 6.3791C13.9253 6.22303 14 6.04746 14 5.85238C14 5.6573 13.9253 5.48563 13.7758 5.33737L7.72292 0.222391C7.54544 0.074131 7.32593 0 7.06439 0C6.80284 0 6.56465 0.074131 6.34981 0.222391Z"
+                    fill="#0090CF" />
+            </svg>
+        </div>
+
+        <div id="liveModal" class="fixed inset-0 z-[100] hidden">
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+                <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" id="liveBackdrop"></div>
+                <div
+                    class="bg-white rounded-2xl shadow-2xl w-[1000px] max-w-7xl max-h-[95vh] overflow-hidden flex flex-col animate-modalIn content-modal relative">
+                    <iframe id="iframeLive" width="962" height="553" src="https://www.youtube.com/embed/3OOEf-gtFZg"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p style="margin-bottom: 10px; margin-top: 10px">Youtube.com</p>
+                    <h2
+                        class="title-live-modal text-center text-[#000000] text-[24px] font-bold leading-[100%] tracking-0%">
+                        [Trực tiếp] Lễ khởi công Dự án mở rộng đoạn cao tốc TP. Hồ Chí Minh - Long Thành</h2>
+
+                    <button id="closeLiveModal"
+                        class="w-10 h-10 flex items-center justify-center rounded-xl transition-colors absolute right-0 top-0">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14" cy="14" r="13.5" fill="#E31C2A" stroke="white" />
+                            <path d="M18.6663 9.33301L9.33301 18.6663M9.33301 9.33301L18.6663 18.6663" stroke="white"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex justify-center item-center footer-bg p-2">
+            <p class="mb-1 !text-white text-sm !font-extralight text-center px-2 cpr-footer">
+                © 2026. Bản quyền thuộc về VEC.
+            </p>
+        </div>
+    </div>
+    <!-- ============================== END FOOTER ============================== -->
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
