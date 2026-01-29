@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function startAutoSlide() {
         autoSlideInterval = setInterval(function () {
             nextSlide();
-        }, 9000); // 5 giây
+        }, 1000000); // 5 giây
     }
 
     // Reset auto slide khi user tương tác
@@ -568,14 +568,21 @@ $(document).ready(function () {
         cssEase: 'linear',
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1025,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 481,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1
@@ -684,28 +691,28 @@ $(document).ready(function () {
         cssEase: 'linear',
         responsive: [
             {
-                breakpoint: 1280,
+                breakpoint: 1281,
                 settings: {
-                    slidesToShow: 8,
+                    slidesToShow: 6,
                     slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 1024,
+                breakpoint: 1025,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 769,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 481,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1
@@ -1057,7 +1064,7 @@ function updateBusinessContent(data) {
 
     // Kiểm tra số lượng items
     const itemCount = data.cards.length;
-    const additionalClass = itemCount >= 4 ? 'card-item-4' : '';
+    const additionalClass = itemCount >= 4 ? 'card-item-4' : 'card-item-3';
 
     // Add cards (không dùng slider)
     data.cards.forEach(card => {
