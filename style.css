@@ -535,7 +535,7 @@ body.menu-open {
 
 .content-slide-1 {
     background: url("./assets/img/Banner.png");
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     height: 100%;
     background-repeat: no-repeat;
@@ -543,7 +543,7 @@ body.menu-open {
 
 .content-slide-2 {
     background: url("./assets/img/Banner.png");
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     height: 100%;
     background-repeat: no-repeat;
@@ -551,7 +551,7 @@ body.menu-open {
 
 .content-slide-3 {
     background: url("./assets/img/Banner.png");
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     height: 100%;
     background-repeat: no-repeat;
@@ -648,7 +648,7 @@ body.menu-open {
 
 @media (max-width: 1370px) {
     .slide-item {
-        height: 68vh;
+        height: 69vh;
     }
 }
 
