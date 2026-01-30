@@ -66,12 +66,12 @@
                         <div
                             class="absolute right-0 top-full w-32 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
                             <!-- Dùng data-lang thay vì onclick -->
-                            <a href="#" data-lang="vi"
+                            <a href="#" data-lang="vi" title="Vietnamese" onclick="vecTranslate(this)"
                                 class="lang-btn flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-t-md">
                                 <img src="https://flagcdn.com/w20/vn.png" alt="VI" class="w-5 h-4">
                                 <span class="text-sm">Tiếng Việt</span>
                             </a>
-                            <a href="#" data-lang="en"
+                            <a href="#" data-lang="en" title="English" onclick="vecTranslate(this)"
                                 class="lang-btn flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-b-md">
                                 <img src="https://flagcdn.com/w20/us.png" alt="EN" class="w-5 h-4">
                                 <span class="text-sm">English</span>
@@ -132,11 +132,13 @@
             </a>
 
             <div class="mobile-menu-language">
-                <button class="language-btn active lang-btn-mobile" data-lang="vi">
+                <button class="language-btn active lang-btn-mobile" data-lang="vi" title="Vietnamese"
+                    onclick="vecTranslateMobile(this)">
                     <img src="https://flagcdn.com/w20/vn.png" alt="VI">
                     <span>Tiếng Việt</span>
                 </button>
-                <button class="language-btn lang-btn-mobile" data-lang="en">
+                <button class="language-btn lang-btn-mobile" data-lang="en" title="English"
+                    onclick="vecTranslateMobile(this)">
                     <img src="https://flagcdn.com/w20/us.png" alt="EN">
                     <span>English</span>
                 </button>
@@ -640,83 +642,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="block lg:hidden bg-[#0090CF]">
-            <div class="p-4 space-y-1">
-                <div class="flex justify-center">
-                    <img src="https://res.cloudinary.com/dc7irvi43/image/upload/v1768839043/logo-footer_a5cpkl.svg"
-                        alt="logo-mobile" class="w-auto h-auto max-w-full" />
-                </div>
-
-                <div class="flex justify-center items-center">
-                    <div class="w-[78px]">&nbsp;</div>
-                    <div class="w-[196px] h-[1px] bg-white-opacity-20">
-                    </div>
-                </div>
-
-                <div class="flex justify-center items-center">
-                    <div class="w-[78px]">&nbsp;</div>
-                    <div class="w-[196px] flex items-center">
-                        <div>
-                            <a href="https://www.facebook.com/VietnamExpresswayCorporation/?ref=embed_page#"
-                                class="cursor-pointer">
-                                <svg width="36" height="39" viewBox="0 0 36 39" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="3" y="4.5" width="30" height="30" rx="15" fill="white" />
-                                    <path
-                                        d="M21.7188 20H19.375V27H16.25V20H13.6875V17.125H16.25V14.9062C16.25 12.4062 17.75 11 20.0312 11C21.125 11 22.2812 11.2188 22.2812 11.2188V13.6875H21C19.75 13.6875 19.375 14.4375 19.375 15.25V17.125H22.1562L21.7188 20Z"
-                                        fill="#0090CF" />
-                                </svg>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://www.youtube.com/results?search_query=T%E1%BB%94NG+C%C3%94NG+TY+%C4%90%E1%BA%A6U+T%C6%AF+PH%C3%81T+TRI%E1%BB%82N+%C4%90%C6%AF%E1%BB%9CNG+CAO+T%E1%BB%90C+VI%E1%BB%86T+NAM+(VEC)"
-                                class="cursor-pointer">
-                                <svg width="44" height="39" viewBox="0 0 44 39" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="7" y="4.5" width="30" height="30" rx="15" fill="white" />
-                                    <path
-                                        d="M30.1562 14.9062C30.5312 16.2188 30.5312 19.0312 30.5312 19.0312C30.5312 19.0312 30.5312 21.8125 30.1562 23.1562C29.9688 23.9062 29.375 24.4688 28.6562 24.6562C27.3125 25 22 25 22 25C22 25 16.6562 25 15.3125 24.6562C14.5938 24.4688 14 23.9062 13.8125 23.1562C13.4375 21.8125 13.4375 19.0312 13.4375 19.0312C13.4375 19.0312 13.4375 16.2188 13.8125 14.9062C14 14.1562 14.5938 13.5625 15.3125 13.375C16.6562 13 22 13 22 13C22 13 27.3125 13 28.6562 13.375C29.375 13.5625 29.9688 14.1562 30.1562 14.9062ZM20.25 21.5625L24.6875 19.0312L20.25 16.5V21.5625Z"
-                                        fill="#0090CF" />
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="text-white text-xs font-normal">Theo dõi chúng tôi</div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center">
-                    <div class="w-[327px]">
-                        <div class="">
-                            <span class="!text-white !font-bold !text-xs">Địa chỉ:</span>
-                            <span class="!text-white !font-light !text-xs block sm:inline">Tầng 2, 3, 4, 5 tòa nhà
-                                Central
-                                Point, số 219 phố Trung Kính, phường Yên Hòa, thành phố Hà Nội </span>
-                        </div>
-                        <div class="">
-                            <span class="!text-white !font-bold !text-xs">Tel:</span>
-                            <span class="!text-white !font-light !text-xs">84-024-3643 0266</span>
-                            <span class="!text-white !font-bold !text-xs ml-2">Fax:</span>
-                            <span class="!text-white !font-light !text-xs">84-024-3643 0270</span>
-                        </div>
-                        <div class="">
-                            <span class="!text-white !font-bold !text-xs">Email:</span>
-                            <span class="!text-white !font-light !text-xs">duongcaotoc@tctvec.vn</span>
-                        </div>
-                        <div class="">
-                            <span class="!text-white !font-bold !text-xs">Website:</span>
-                            <span class="!text-white !font-light !text-xs block sm:inline">duongcaotoc.com.vn /
-                                expressway.com.vn</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-center w-full">
-                    <div class="cursor-pointer">
-                        <img src="https://res.cloudinary.com/dc7irvi43/image/upload/v1767206743/vec-fb-follow_kxwlem.svg"
-                            alt="vec-db-follow" class="w-auto h-auto max-w-full" />
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <div id="btn-menu" style="z-index: 6"
             class="z-index rounded-full p-[17px] fixed bottom-[72px] right-[18px] cursor-pointer border-2 border-white">
@@ -786,130 +711,121 @@
 
 
     <script>
-        /* ===============================
-           GOOGLE TRANSLATE – FINAL FIX
-        ================================ */
+        function vecTranslate(btn, from = "auto") {
+            const to = btn.getAttribute("data-lang");
+            const flagUrl = btn.getAttribute("data-flag-url");
 
-        let googleTranslateReady = false;
-        let pendingLang = null;
-
-        /* 1️⃣ Init Google Translate */
-        function googleTranslateElementInit() {
-            console.log('🚀 Init Google Translate');
-
-            new google.translate.TranslateElement({
-                pageLanguage: 'vi',
-                includedLanguages: 'en,vi',
-                autoDisplay: false
-            }, 'google_translate_element');
-
-            observeGoogleTranslate();
-        }
-
-        /* 2️⃣ Wait for .goog-te-combo */
-        function observeGoogleTranslate() {
-            const observer = new MutationObserver(() => {
-                const combo = document.querySelector('.goog-te-combo');
-                if (!combo) return;
-
-                googleTranslateReady = true;
-                console.log('✅ Google Translate ready');
-                observer.disconnect();
-
-                // Nếu có ngôn ngữ đang chờ → dịch ngay
-                if (pendingLang) {
-                    triggerTranslate(pendingLang);
-                    pendingLang = null;
+            if (flagUrl) {
+                const toggle = document.getElementById("vecLangToggle");
+                if (toggle) {
+                    const svg = toggle.querySelector("svg");
+                    const image = svg.querySelector("#imageLangGlobe");
+                    if (image) {
+                        image.setAttribute("xlink:href", flagUrl);
+                    }
                 }
-            });
-
-            observer.observe(document.body, { childList: true, subtree: true });
-        }
-
-        /* 3️⃣ DOM Ready */
-        document.addEventListener('DOMContentLoaded', () => {
-            bindLanguageButtons();
-            restoreLanguage();
-        });
-
-        /* 4️⃣ Bind tất cả nút ngôn ngữ */
-        function bindLanguageButtons() {
-            document.querySelectorAll('[data-lang]').forEach(btn => {
-                btn.addEventListener('click', e => {
-                    e.preventDefault();
-                    setLanguage(btn.dataset.lang);
-                });
-            });
-        }
-
-        /* 5️⃣ Set language (logic trung tâm) */
-        function setLanguage(lang) {
-            console.log('🔄 Set language:', lang);
-
-            updateActiveButtons(lang);
-            updateHeaderUI(lang);
-            localStorage.setItem('preferredLang', lang);
-
-            if (!googleTranslateReady) {
-                console.warn('⏳ Translate chưa sẵn sàng → pending:', lang);
-                pendingLang = lang;
-                return;
             }
 
-            triggerTranslate(lang);
-        }
+            const walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+                        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                        if (node.parentElement &&
+                            ["SCRIPT", "STYLE", "NOSCRIPT", "IFRAME", "CODE", "PRE"].includes(node.parentElement.tagName)
+                        ) return NodeFilter.FILTER_REJECT;
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
 
-        /* 6️⃣ Trigger Google Translate */
-        function triggerTranslate(lang) {
-            const combo = document.querySelector('.goog-te-combo');
-            if (!combo) return;
+            const nodes = [];
+            while (walker.nextNode()) {
+                nodes.push(walker.currentNode);
+            }
 
-            // 🔥 BẮT BUỘC reset trước
-            combo.value = '';
-            combo.dispatchEvent(new Event('change'));
+            nodes.forEach(node => {
+                const text = node.nodeValue.trim();
 
-            // ⏱ Đợi 1 tick
-            setTimeout(() => {
-                combo.value = lang;
-                combo.dispatchEvent(new Event('change'));
-                console.log('🌐 Translated to', lang);
-            }, 0);
-        }
-
-        /* 7️⃣ Update active state */
-        function updateActiveButtons(lang) {
-            document.querySelectorAll('[data-lang]').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
+                fetch(
+                    "https://translate.googleapis.com/translate_a/single" +
+                    "?client=gtx" +
+                    "&sl=" + from +
+                    "&tl=" + to +
+                    "&dt=t" +
+                    "&q=" + encodeURIComponent(text)
+                )
+                    .then(r => r.json())
+                    .then(d => {
+                        node.nodeValue = d[0].map(x => x[0]).join("");
+                    })
+                    .catch(() => { });
             });
         }
 
-        /* 8️⃣ Update header flag */
-        function updateHeaderUI(lang) {
-            const flag = document.getElementById('currentFlag');
-            if (!flag) return;
+        function vecTranslateMobile(btn, from = "auto") {
+            /* ====== ADD ACTIVE (CHỈ PHẦN NÀY) ====== */
+            document.querySelectorAll('.lang-btn-mobile')
+                .forEach(b => b.classList.remove('active'));
 
-            flag.src =
-                lang === 'vi'
-                    ? 'https://flagcdn.com/w20/vn.png'
-                    : 'https://flagcdn.com/w20/us.png';
+            btn.classList.add('active');
+            /* ====== END ACTIVE ====== */
 
-            flag.alt = lang.toUpperCase();
+            const to = btn.getAttribute("data-lang");
+            const flagUrl = btn.getAttribute("data-flag-url");
+
+            if (flagUrl) {
+                const toggle = document.getElementById("vecLangToggleMobile");
+                if (toggle) {
+                    const svg = toggle.querySelector("svg");
+                    const image = svg.querySelector("#imageLangGlobeMobile");
+                    if (image) {
+                        image.setAttribute("xlink:href", flagUrl);
+                    }
+                }
+            }
+
+            const walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+                        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                        if (node.parentElement &&
+                            ["SCRIPT", "STYLE", "NOSCRIPT", "IFRAME", "CODE", "PRE"].includes(node.parentElement.tagName)
+                        ) return NodeFilter.FILTER_REJECT;
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
+
+            const nodes = [];
+            while (walker.nextNode()) {
+                nodes.push(walker.currentNode);
+            }
+
+            nodes.forEach(node => {
+                const text = node.nodeValue.trim();
+
+                fetch(
+                    "https://translate.googleapis.com/translate_a/single" +
+                    "?client=gtx" +
+                    "&sl=" + from +
+                    "&tl=" + to +
+                    "&dt=t" +
+                    "&q=" + encodeURIComponent(text)
+                )
+                    .then(r => r.json())
+                    .then(d => {
+                        node.nodeValue = d[0].map(x => x[0]).join("");
+                    })
+                    .catch(() => {
+                    });
+            });
         }
 
-        /* 9️⃣ Restore saved language */
-        function restoreLanguage() {
-            const saved = localStorage.getItem('preferredLang') || 'vi';
-            setLanguage(saved);
-        }
-
-        /* 🔍 Debug */
-        window.addEventListener('load', () => {
-            console.log('🌐 Window loaded');
-            console.log('Google ready:', googleTranslateReady);
-        });
     </script>
-
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="script.js"></script>
 </body>

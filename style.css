@@ -24,9 +24,9 @@
 } */
 
 #google_translate_element {
-    position: absolute;
+    /* position: absolute;
     top: -9999px;
-    left: -9999px;
+    left: -9999px; */
 }
 
 /* ========================= HEADER ========================= */
@@ -359,7 +359,7 @@ body.menu-open {
 .hero-slider {
     position: relative;
     overflow: hidden;
-    margin-top: 104px;
+    margin-top: 65px;
 }
 
 .slide-item {
