@@ -359,6 +359,30 @@ const isMobile = window.innerWidth <= 1023;
 let iconLive;
 let isShowMenu = false;
 
+if (btnScrollTop) {
+    window.addEventListener("scroll", function () {
+        var scrollTop = window.scrollY;
+
+        if (scrollTop >= 10) {
+            btnScrollTop.classList.remove("hidden-btn-scroll-toll");
+            if (btnMenu) {
+                btnMenu.classList.remove(`bottom-[${isMobile ? 60 : 72}px]`);
+                btnMenu.classList.add(`bottom-[${isMobile ? 110 : 138}px]`);
+            }
+        } else {
+            btnScrollTop.classList.add("hidden-btn-scroll-toll");
+            if (btnMenu) {
+                btnMenu.classList.remove(`bottom-[${isMobile ? 110 : 138}px]`);
+                btnMenu.classList.add(`bottom-[${isMobile ? 60 : 72}px]`);
+            }
+        }
+    });
+
+    btnScrollTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
 btnScrollTop.addEventListener("click", () => {
     window.scrollTo({ top: 0 });
 });
@@ -476,18 +500,20 @@ closeLiveModal.addEventListener("click", () => {
     closeModal();
 });
 
-window.addEventListener("scroll", function () {
-    var scrollTop = window.scrollY;
-    if (scrollTop >= 10) {
-        btnScrollTop.classList.remove("hidden-btn-scroll-toll");
-        btnMenu.classList.remove(`bottom-[${isMobile ? 60 : 72}px]`);
-        btnMenu.classList.add(`bottom-[${isMobile ? 110 : 138}px]`);
-    } else {
-        btnScrollTop.classList.add("hidden-btn-scroll-toll");
-        btnMenu.classList.remove(`bottom-[${isMobile ? 110 : 138}px]`);
-        btnMenu.classList.add(`bottom-[${isMobile ? 60 : 72}px]`);
-    }
-});
+
+
+// window.addEventListener("scroll", function () {
+//     var scrollTop = window.scrollY;
+//     if (scrollTop >= 10) {
+//         btnScrollTop.classList.remove("hidden-btn-scroll-toll");
+//         btnMenu.classList.remove(`bottom-[${isMobile ? 60 : 72}px]`);
+//         btnMenu.classList.add(`bottom-[${isMobile ? 110 : 138}px]`);
+//     } else {
+//         btnScrollTop.classList.add("hidden-btn-scroll-toll");
+//         btnMenu.classList.remove(`bottom-[${isMobile ? 110 : 138}px]`);
+//         btnMenu.classList.add(`bottom-[${isMobile ? 60 : 72}px]`);
+//     }
+// });
 
 (() => {
     const tinyTalkShadowHost = document.querySelector("#tiny-talk-shadow-host");
@@ -1078,7 +1104,7 @@ function updateBusinessContent(data) {
                         <img src="${card.icon}" alt="">
                     </div>
                     <div class="name-content">
-                        <a href="${card.link}">${card.name}</a>
+                        <a href="${card.link}" target="_blank">${card.name}</a>
                     </div>
                 </div>
                 <div class="bg-card-item">
@@ -1153,3 +1179,5 @@ document.addEventListener('DOMContentLoaded', function () {
         updateBusinessContent(tabData[0].business);
     }
 });
+
+

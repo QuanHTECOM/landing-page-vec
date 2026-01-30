@@ -55,24 +55,32 @@
                     </a>
 
                     <!-- Language Switcher -->
+                    <!-- Dropdown ngôn ngữ -->
                     <div class="relative group language-desktop">
-                        <button class="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
-                            <img src="https://flagcdn.com/w20/vn.png" alt="VI" class="w-5 h-4">
-                            <!-- <i class="fas fa-chevron-down text-xs"></i> -->
+                        <button class="flex items-center space-x-1 text-gray-700 hover:text-blue-600 pb-2">
+                            <img id="currentFlag" src="https://flagcdn.com/w20/vn.png" alt="VI" class="w-5 h-4">
+                            <!-- <span id="currentLang" class="text-sm"></span> -->
+                            <i class="fas fa-chevron-down text-xs"></i>
                         </button>
 
-                        <!-- <div
-                            class="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
-                            <a href="#" class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100">
+                        <div
+                            class="absolute right-0 top-full w-32 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
+                            <!-- Dùng data-lang thay vì onclick -->
+                            <a href="#" data-lang="vi"
+                                class="lang-btn flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-t-md">
                                 <img src="https://flagcdn.com/w20/vn.png" alt="VI" class="w-5 h-4">
                                 <span class="text-sm">Tiếng Việt</span>
                             </a>
-                            <a href="#" class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100">
+                            <a href="#" data-lang="en"
+                                class="lang-btn flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 rounded-b-md">
                                 <img src="https://flagcdn.com/w20/us.png" alt="EN" class="w-5 h-4">
                                 <span class="text-sm">English</span>
                             </a>
-                        </div> -->
+                        </div>
                     </div>
+
+                    <!-- Hidden Google Translate element -->
+                    <div id="google_translate_element"></div>
 
                     <!-- Mobile Menu Button -->
                     <button class="md:hidden text-gray-700 hover:text-blue-600" id="mobile-menu-btn">
@@ -124,14 +132,14 @@
             </a>
 
             <div class="mobile-menu-language">
-                <button class="language-btn active">
+                <button class="language-btn active lang-btn-mobile" data-lang="vi">
                     <img src="https://flagcdn.com/w20/vn.png" alt="VI">
                     <span>Tiếng Việt</span>
                 </button>
-                <!-- <button class="language-btn">
+                <button class="language-btn lang-btn-mobile" data-lang="en">
                     <img src="https://flagcdn.com/w20/us.png" alt="EN">
                     <span>English</span>
-                </button> -->
+                </button>
             </div>
         </div>
     </div>
@@ -560,16 +568,39 @@
                             <span class="!text-white !font-bold !text-sm">ĐƠN VỊ THÀNH VIÊN</span>
                         </div>
                         <div class="w-full">
-                            <p class="!text-white !font-light !text-sm">Công ty CP Tư vấn Đường cao tốc Việt Nam</p>
-                            <p class="!text-white !font-light !text-sm">Công ty CP Dịch vụ đường cao tốc Việt Nam</p>
-                            <p class="!text-white !font-light !text-sm">Công ty CP Vận hành & Bảo trì đường cao tốc Việt
-                                Nam</p>
-                            <p class="!text-white !font-light !text-sm">Công ty CP Dịch vụ Kỹ thuật đường cao tốc Việt
-                                Nam</p>
-                            <p class="!text-white !font-light !text-sm">Trung tâm Nghiên cứu phát triển đường cao tốc
-                                Việt Nam</p>
-                            <p class="!text-white !font-light !text-sm">Trung tâm Nghiên cứu phát triển đường cao tốc
-                                Việt Nam</p>
+                            <p class="!text-white !font-light !text-sm">
+                                <a href="https://vecc.com.vn/">
+                                    Công ty CP Tư vấn Đường cao tốc Việt Nam
+                                </a>
+                            </p>
+                            <p class="!text-white !font-light !text-sm">
+                                <a href="https://vecs.com.vn/vi/">
+                                    Công ty CP Dịch vụ đường cao tốc Việt Nam
+                                </a>
+                            </p>
+                            <p class="!text-white !font-light !text-sm">
+                                <a
+                                    href="https://www.duongcaotoc.com.vn/cong-ty-thanh-vien/cong-ty-co-phan-van-hanh-va-bao-tri-duong-cao-toc-viet-nam-vec-om.html">
+                                    Công ty CP Vận hành & Bảo trì đường cao tốc ViệtNam
+                                </a>
+                            </p>
+                            <p class="!text-white !font-light !text-sm">
+                                <a href="https://www.vece.com.vn/">
+                                    Công ty CP Dịch vụ Kỹ thuật đường cao tốc Việt Nam
+                                </a>
+                            </p>
+                            <p class="!text-white !font-light !text-sm">
+                                <a
+                                    href="https://www.duongcaotoc.com.vn/cong-ty-thanh-vien/trung-tam-nghien-cuu-phat-trien-duong-cao-toc-viet-nam-vec-rd.html">
+                                    Trung tâm Nghiên cứu phát triển đường cao tốc Việt Nam
+                                </a>
+                            </p>
+                            <p class="!text-white !font-light !text-sm">
+                                <a href="https://www.duongcaotoc.com.vn/cong-ty-thanh-vien/trung-tam-giam-sat-khai-thac-van-hanh-duong-cao-toc-viet-nam-vec-m.html"
+                                    target="_blank">
+                                    Trung tâm Giám sát khai thác vận hành đường cao tốc Việt Nam
+                                </a>
+                            </p>
                         </div>
                     </div>
 
@@ -753,6 +784,132 @@
     <!-- ============================== END FOOTER ============================== -->
 
 
+
+    <script>
+        /* ===============================
+           GOOGLE TRANSLATE – FINAL FIX
+        ================================ */
+
+        let googleTranslateReady = false;
+        let pendingLang = null;
+
+        /* 1️⃣ Init Google Translate */
+        function googleTranslateElementInit() {
+            console.log('🚀 Init Google Translate');
+
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            observeGoogleTranslate();
+        }
+
+        /* 2️⃣ Wait for .goog-te-combo */
+        function observeGoogleTranslate() {
+            const observer = new MutationObserver(() => {
+                const combo = document.querySelector('.goog-te-combo');
+                if (!combo) return;
+
+                googleTranslateReady = true;
+                console.log('✅ Google Translate ready');
+                observer.disconnect();
+
+                // Nếu có ngôn ngữ đang chờ → dịch ngay
+                if (pendingLang) {
+                    triggerTranslate(pendingLang);
+                    pendingLang = null;
+                }
+            });
+
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+
+        /* 3️⃣ DOM Ready */
+        document.addEventListener('DOMContentLoaded', () => {
+            bindLanguageButtons();
+            restoreLanguage();
+        });
+
+        /* 4️⃣ Bind tất cả nút ngôn ngữ */
+        function bindLanguageButtons() {
+            document.querySelectorAll('[data-lang]').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+                    setLanguage(btn.dataset.lang);
+                });
+            });
+        }
+
+        /* 5️⃣ Set language (logic trung tâm) */
+        function setLanguage(lang) {
+            console.log('🔄 Set language:', lang);
+
+            updateActiveButtons(lang);
+            updateHeaderUI(lang);
+            localStorage.setItem('preferredLang', lang);
+
+            if (!googleTranslateReady) {
+                console.warn('⏳ Translate chưa sẵn sàng → pending:', lang);
+                pendingLang = lang;
+                return;
+            }
+
+            triggerTranslate(lang);
+        }
+
+        /* 6️⃣ Trigger Google Translate */
+        function triggerTranslate(lang) {
+            const combo = document.querySelector('.goog-te-combo');
+            if (!combo) return;
+
+            // 🔥 BẮT BUỘC reset trước
+            combo.value = '';
+            combo.dispatchEvent(new Event('change'));
+
+            // ⏱ Đợi 1 tick
+            setTimeout(() => {
+                combo.value = lang;
+                combo.dispatchEvent(new Event('change'));
+                console.log('🌐 Translated to', lang);
+            }, 0);
+        }
+
+        /* 7️⃣ Update active state */
+        function updateActiveButtons(lang) {
+            document.querySelectorAll('[data-lang]').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+
+        /* 8️⃣ Update header flag */
+        function updateHeaderUI(lang) {
+            const flag = document.getElementById('currentFlag');
+            if (!flag) return;
+
+            flag.src =
+                lang === 'vi'
+                    ? 'https://flagcdn.com/w20/vn.png'
+                    : 'https://flagcdn.com/w20/us.png';
+
+            flag.alt = lang.toUpperCase();
+        }
+
+        /* 9️⃣ Restore saved language */
+        function restoreLanguage() {
+            const saved = localStorage.getItem('preferredLang') || 'vi';
+            setLanguage(saved);
+        }
+
+        /* 🔍 Debug */
+        window.addEventListener('load', () => {
+            console.log('🌐 Window loaded');
+            console.log('Google ready:', googleTranslateReady);
+        });
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="script.js"></script>
 </body>
